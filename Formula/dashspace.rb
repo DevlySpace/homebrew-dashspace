@@ -2,15 +2,15 @@ class Dashspace < Formula
   desc "Official DashSpace CLI for creating and publishing modules"
   homepage "https://dashspace.space"
   license "MIT"
-  version "1.0.0"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/devlyspace/devly-cli/releases/download/#{version}/dashspace-darwin-arm64"
-      sha256 "PLACEHOLDER_ARM64_SHA"
+      url "https://github.com/devlyspace/devly-cli/releases/download/0.0.3/dashspace-darwin-arm64"
+      sha256 "d0aef668a3798d5baaf8ff6f62c8484a73b63284ca535f80560fce9bee914f6b"
     else
-      url "https://github.com/devlyspace/devly-cli/releases/download/#{version}/dashspace-darwin-amd64"
-      sha256 "PLACEHOLDER_AMD64_SHA"
+      url "https://github.com/devlyspace/devly-cli/releases/download/0.0.3/dashspace-darwin-amd64"
+      sha256 "27154461a494c2956eb17e5d2e229a49736533c2046b59f24ba13c9eb1b2f3b3"
     end
   end
 
@@ -30,6 +30,6 @@ class Dashspace < Formula
 
   test do
     system "#{bin}/dashspace", "--version"
-    assert_match version.to_s, shell_output("#{bin}/dashspace --version")
+    assert_match "dashspace version 0.0.3", shell_output("#{bin}/dashspace --version")
   end
 end
